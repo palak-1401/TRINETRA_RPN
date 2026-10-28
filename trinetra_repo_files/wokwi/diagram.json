@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "Team Trinetra",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -10, "left": 330, "attrs": { "distance": "200" } },
+    { "type": "wokwi-led", "id": "led_in1", "top": -110, "left": 150, "attrs": { "color": "green", "label": "Left fwd (IN1 D5)" } },
+    { "type": "wokwi-led", "id": "led_in2", "top": -110, "left": 200, "attrs": { "color": "red", "label": "Left back (IN2 D6)" } },
+    { "type": "wokwi-led", "id": "led_in3", "top": -110, "left": 250, "attrs": { "color": "green", "label": "Right fwd (IN3 D9)" } },
+    { "type": "wokwi-led", "id": "led_in4", "top": -110, "left": 300, "attrs": { "color": "red", "label": "Right back (IN4 D10)" } }
+  ],
+  "connections": [
+    [ "uno:5", "led_in1:A", "green", [ "v-20", "h0" ] ],
+    [ "uno:6", "led_in2:A", "red", [ "v-30", "h0" ] ],
+    [ "uno:9", "led_in3:A", "green", [ "v-40", "h0" ] ],
+    [ "uno:10", "led_in4:A", "red", [ "v-50", "h0" ] ],
+    [ "led_in1:C", "uno:GND.1", "black", [ "v10", "h0" ] ],
+    [ "led_in2:C", "uno:GND.1", "black", [ "v10", "h0" ] ],
+    [ "led_in3:C", "uno:GND.1", "black", [ "v10", "h0" ] ],
+    [ "led_in4:C", "uno:GND.1", "black", [ "v10", "h0" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "red", [ "v20", "h0" ] ],
+    [ "ultrasonic1:GND", "uno:GND.2", "black", [ "v30", "h0" ] ],
+    [ "ultrasonic1:TRIG", "uno:11", "blue", [ "v-60", "h0" ] ],
+    [ "ultrasonic1:ECHO", "uno:12", "orange", [ "v-70", "h0" ] ]
+  ],
+  "dependencies": {}
+}

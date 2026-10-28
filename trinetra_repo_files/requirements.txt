@@ -1,0 +1,5 @@
+opencv-python
+numpy
+pyserial
+matplotlib
+# ultralytics   (optional, only for --model / train_yolo.py)
